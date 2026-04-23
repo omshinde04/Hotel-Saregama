@@ -46,13 +46,21 @@ export const metadata = {
     canonical: "https://hotelsaregama.in",
   },
 
+  // 🔥 FIXED ICONS (DO NOT REMOVE app/icon.png)
   icons: {
     icon: [
       { url: "/favicon.ico" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
+    shortcut: "/favicon.ico", // 🔥 important for browsers
     apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        url: "/favicon.ico",
+      },
+    ],
   },
 
   manifest: "/site.webmanifest",
@@ -129,7 +137,13 @@ export default function RootLayout({ children }) {
                 {
                   "@type": "OpeningHoursSpecification",
                   dayOfWeek: [
-                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
                   ],
                   opens: "11:00",
                   closes: "01:30",
