@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
     FaWhatsapp,
@@ -20,23 +21,29 @@ export default function Footer() {
     return (
         <footer className="bg-ink border-t border-gold/10 pt-16 pb-28 md:pb-16 relative overflow-hidden">
 
-            {/* Glow */}
+            {/* 🔥 Glow */}
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
                 <div className="w-[500px] h-[250px] bg-gold/10 blur-[120px] rounded-full" />
             </div>
 
             <div className="max-w-container mx-auto px-6 md:px-10 relative z-10">
 
-                {/* TOP GRID */}
+                {/* 🔥 GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-14">
 
-                    {/* BRAND */}
+                    {/* ✅ BRAND */}
                     <div className="md:col-span-2">
+
+                        {/* LOGO */}
                         <div className="flex items-center gap-3 mb-5">
-                            <div className="w-9 h-9 border border-gold/40 flex items-center justify-center">
-                                <span className="text-gold font-display text-sm font-bold">
-                                    S
-                                </span>
+                            <div className="relative w-10 h-10">
+                                <Image
+                                    src="/logo.png"
+                                    alt="Saregama Family Restaurant & Bar Logo"
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
                             </div>
 
                             <span className="font-display italic text-2xl text-gold">
@@ -70,7 +77,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* QUICK LINKS */}
+                    {/* 🔥 QUICK LINKS */}
                     <div>
                         <h4 className="text-label text-gold mb-5 tracking-widest">
                             Quick Links
@@ -90,7 +97,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* CONTACT */}
+                    {/* 🔥 CONTACT */}
                     <div>
                         <h4 className="text-label text-gold mb-5 tracking-widest">
                             Contact
@@ -98,7 +105,6 @@ export default function Footer() {
 
                         <div className="space-y-4">
 
-                            {/* ADDRESS */}
                             <a
                                 href="https://www.google.com/maps/dir//Saregama+Family+Restaurant+and+Bar+and+lodding,+Mumbai+-+Nashik+Expy,+Dahalewadi,+Maharashtra+422402/@18.6312193,73.8301434,15z"
                                 target="_blank"
@@ -110,7 +116,6 @@ export default function Footer() {
                                 Nashik – 422402
                             </a>
 
-                            {/* CALL */}
                             <a
                                 href={PHONE_HREF}
                                 className="flex items-center gap-3 text-sm text-muted hover:text-gold transition"
@@ -119,7 +124,6 @@ export default function Footer() {
                                 {PHONE}
                             </a>
 
-                            {/* WHATSAPP */}
                             <a
                                 href={WHATSAPP_HREF}
                                 target="_blank"
@@ -129,7 +133,6 @@ export default function Footer() {
                                 WhatsApp Us
                             </a>
 
-                            {/* DIRECTIONS */}
                             <a
                                 href="https://www.google.com/maps/dir//Saregama+Family+Restaurant+and+Bar+and+lodding,+Mumbai+-+Nashik+Expy,+Dahalewadi,+Maharashtra+422402/@18.6312193,73.8301434,15z"
                                 target="_blank"
@@ -143,26 +146,31 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* SEO TEXT */}
+                {/* 🔥 SEO TEXT */}
                 <div className="border-t border-gold/10 pt-8 mb-6">
                     <p className="text-muted/50 text-xs text-center max-w-4xl mx-auto leading-relaxed">
                         Saregama Family Restaurant & Bar is a top-rated restaurant in Ghoti, Nashik,
-                        strategically located on the Mumbai–Nashik Expressway near Igatpuri. Known as
-                        one of the best highway restaurants in Maharashtra, we offer premium Indian
-                        cuisine, including butter chicken, dum biryani, tandoori starters, and a full
-                        bar experience. Whether you're traveling with family, riding with friends, or
-                        taking a break on a long drive, Saregama provides comfortable seating, ample
-                        parking, and a relaxing dining atmosphere. If you're searching for a family
-                        restaurant near Igatpuri, a bar near Ghoti Nashik, or the best food stop on the
-                        Mumbai–Nashik highway, Saregama is the perfect destination.
+                        located on the Mumbai–Nashik Expressway. Known for butter chicken, biryani,
+                        tandoori starters, and a full bar experience. A perfect stop for families,
+                        bikers, and travelers.
                     </p>
                 </div>
-                {/* BOTTOM */}
+
+                {/* 🔥 BOTTOM */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-t border-gold/10 pt-6">
 
                     <p className="text-muted/50 text-xs">
                         © {new Date().getFullYear()} Saregama Family Restaurant & Bar
                     </p>
+
+                    <a
+                        href="https://www.omradixsolutions.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-muted/50 hover:text-gold transition"
+                    >
+                        Developed by <span className="text-gold">Omradix Solutions</span>
+                    </a>
 
                     <div className="flex gap-6">
                         <Link
