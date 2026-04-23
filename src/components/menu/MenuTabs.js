@@ -1,13 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { MENU_DATA } from "@/lib/menuData";
 import MenuGrid from "./MenuGrid";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function MenuTabs() {
     const [activeTab, setActiveTab] = useState(0);
     const [filter, setFilter] = useState("all");
+
+    const scrollRef = useRef(null);
+
+    const scroll = (dir) => {
+        if (!scrollRef.current) return;
+
+        scrollRef.current.scrollBy({
+            left: dir === "left" ? -150 : 150,
+            behavior: "smooth",
+        });
+    };
 
     const currentCategory = MENU_DATA[activeTab];
 
@@ -21,7 +33,6 @@ export default function MenuTabs() {
                 (item) => item.type === filter
             );
 
-            // 🔥 GROUP BY SUBCATEGORY
             const grouped = {};
 
             filteredItems.forEach((item) => {
@@ -62,28 +73,42 @@ export default function MenuTabs() {
 
                 {/* 🔥 CATEGORY TABS */}
                 {filter === "all" && (
-                    <div className="sticky top-20 z-30 bg-ink/80 backdrop-blur border-b border-gold/10 mb-10">
-                        <div className="flex overflow-x-auto no-scrollbar">
+                    <div className="relative mb-10">
+
+                        {/* LEFT ARROW */}
+                        <button
+                            onClick={() => scroll("left")}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-ink/80 backdrop-blur p-2 border border-gold/20 rounded-full"
+                        >
+                            <FaChevronLeft size={12} className="text-gold" />
+                        </button>
+
+                        {/* RIGHT ARROW */}
+                        <button
+                            onClick={() => scroll("right")}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-ink/80 backdrop-blur p-2 border border-gold/20 rounded-full"
+                        >
+                            <FaChevronRight size={12} className="text-gold" />
+                        </button>
+
+                        {/* SCROLL CONTAINER */}
+                        <div
+                            ref={scrollRef}
+                            className="flex overflow-x-auto no-scrollbar gap-2 px-10"
+                        >
                             {MENU_DATA.map((cat, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setActiveTab(i)}
-                                    className={`relative px-6 py-4 text-xs uppercase tracking-widest ${activeTab === i
-                                        ? "text-gold"
-                                        : "text-muted hover:text-cream"
+                                    className={`relative px-5 py-3 whitespace-nowrap text-xs uppercase tracking-widest border rounded-full transition ${activeTab === i
+                                        ? "bg-gold text-ink border-gold"
+                                        : "border-gold/20 text-muted hover:text-cream"
                                         }`}
                                 >
                                     {cat.icon && (
                                         <cat.icon className="inline mr-2 text-gold" size={14} />
                                     )}
                                     {cat.category}
-
-                                    {activeTab === i && (
-                                        <motion.div
-                                            layoutId="tabIndicator"
-                                            className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold"
-                                        />
-                                    )}
                                 </button>
                             ))}
                         </div>
@@ -99,12 +124,26 @@ export default function MenuTabs() {
                         displayData.map((cat, i) => (
                             <div key={i}>
 
-                                {/* CATEGORY TITLE */}
-                                <h2 className="text-gold text-lg tracking-widest mb-6 uppercase">
-                                    {cat.category}
-                                </h2>
+                                <div className="flex items-center gap-3 mb-6">
 
-                                {/* SUBCATEGORY GROUPS */}
+                                    {/* ICON */}
+                                    {cat.icon && (
+                                        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold/10 border border-gold/20">
+                                            <cat.icon className="text-gold" size={14} />
+                                        </span>
+                                    )}
+
+                                    {/* TITLE */}
+                                    <h2 className="text-gold text-lg tracking-widest uppercase">
+                                        {cat.category}
+                                    </h2>
+
+                                    {/* LINE */}
+                                    <div className="flex-1 h-px bg-gradient-to-r from-gold/40 to-transparent ml-3" />
+
+                                </div>
+
+                                {/* SUBCATEGORY */}
                                 {Object.entries(cat.groupedItems).map(
                                     ([sub, items], index) => (
                                         <div key={index} className="mb-10">

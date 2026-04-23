@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 import {
     HiOutlinePhone,
@@ -54,17 +55,32 @@ export default function Navbar() {
             >
                 <div className="max-w-container mx-auto px-6 md:px-10 flex items-center justify-between">
 
-                    {/* LOGO */}
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="w-10 h-10 border border-gold/40 flex items-center justify-center group-hover:border-gold transition duration-300">
-                            <span className="text-gold font-display font-bold text-sm">S</span>
+
+                        {/* LOGO IMAGE */}
+                        <div className="relative w-12 h-12 md:w-14 md:h-14 transition duration-300 group-hover:scale-105">
+
+                            <Image
+                                src="/logo.png"
+                                alt="Saregama Restaurant Logo"
+                                fill
+                                priority
+                                className="object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]"
+                            />
+
                         </div>
 
-                        <span className="font-display italic text-xl md:text-2xl text-gold tracking-wide">
-                            Saregama
-                        </span>
-                    </Link>
+                        {/* TEXT */}
+                        <div className="flex flex-col leading-tight">
+                            <span className="font-display italic text-xl md:text-2xl text-gold tracking-wide">
+                                Saregama
+                            </span>
+                            <span className="text-[10px] md:text-xs text-muted tracking-widest uppercase">
+                                Restaurant • Rooms • Bar
+                            </span>
+                        </div>
 
+                    </Link>
                     {/* DESKTOP NAV */}
                     <nav className="hidden lg:flex items-center gap-10">
                         {NAV_LINKS.map((link) => (
