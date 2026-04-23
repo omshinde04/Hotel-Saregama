@@ -62,44 +62,117 @@ export const MENU_CATEGORIES = [
         label: "Starters",
         icon: "starters",
         items: [
-            { name: "Chicken Lollipop", price: "₹420", desc: "Crispy fried with secret spice blend" },
-            { name: "Paneer Tikka", price: "₹380", desc: "Marinated cottage cheese, charcoal grilled" },
-            { name: "Murg Malai Kebab", price: "₹450", desc: "Creamy chicken skewers" },
-            { name: "Veg Spring Rolls", price: "₹280", desc: "Crispy rolls with veggies" },
-            { name: "Tandoori Prawns", price: "₹520", desc: "Juicy prawns, tandoori masala" },
+            {
+                name: "Chicken Lollipop",
+                price: "₹140 / ₹280",
+                desc: "Crispy fried with secret spice blend",
+            },
+            {
+                name: "Chicken 65",
+                price: "₹220",
+                desc: "Spicy deep-fried chicken bites",
+            },
+            {
+                name: "Chicken Chilli",
+                price: "₹220 / ₹120",
+                desc: "Indo-Chinese classic with bold flavors",
+            },
+            {
+                name: "Chicken Spring Onion",
+                price: "₹300",
+                desc: "Tossed with fresh spring onions",
+            },
+            {
+                name: "Chicken Garlic Roast",
+                price: "₹300",
+                desc: "Garlic-infused roasted chicken",
+            },
         ],
     },
+
     {
         label: "Mains",
         icon: "mains",
         items: [
-            { name: "Butter Chicken", price: "₹520", desc: "Velvety tomato gravy" },
-            { name: "Dal Makhani", price: "₹350", desc: "Slow cooked lentils" },
-            { name: "Chicken Handi", price: "₹510", desc: "Clay pot cooked chicken" },
-            { name: "Palak Paneer", price: "₹370", desc: "Spinach & cottage cheese" },
-            { name: "Rogan Josh", price: "₹580", desc: "Kashmiri lamb curry" },
+            {
+                name: "Butter Chicken",
+                price: "₹300 / ₹800",
+                desc: "Velvety tomato makhani gravy",
+            },
+            {
+                name: "Chicken Kolhapuri",
+                price: "₹250",
+                desc: "Spicy Kolhapuri-style chicken",
+            },
+            {
+                name: "Chicken Handi",
+                price: "₹350 / ₹700",
+                desc: "Clay pot slow-cooked chicken",
+            },
+            {
+                name: "Mutton Handi",
+                price: "₹550 / ₹1100",
+                desc: "Rich mutton curry cooked in handi",
+            },
+            {
+                name: "Paneer Butter Masala",
+                price: "₹250",
+                desc: "Creamy paneer in butter gravy",
+            },
         ],
     },
+
     {
         label: "Biryani",
         icon: "biryani",
         items: [
-            { name: "Chicken Biryani", price: "₹550", desc: "Authentic dum style" },
-            { name: "Mutton Biryani", price: "₹650", desc: "Tender mutton, rich spices" },
-            { name: "Veg Biryani", price: "₹420", desc: "Seasonal vegetables" },
-            { name: "Prawn Biryani", price: "₹680", desc: "Coastal style" },
-            { name: "Egg Biryani", price: "₹380", desc: "Light & aromatic" },
+            {
+                name: "Chicken Biryani",
+                price: "₹220",
+                desc: "Authentic dum-style biryani",
+            },
+            {
+                name: "Chicken Matka Biryani",
+                price: "₹400 / ₹800",
+                desc: "Slow-cooked in sealed clay pot",
+            },
+            {
+                name: "Mutton Matka Biryani",
+                price: "₹600 / ₹1200",
+                desc: "Premium mutton biryani",
+            },
+            {
+                name: "Mutton Biryani",
+                price: "₹300",
+                desc: "Rich aromatic mutton rice",
+            },
         ],
     },
+
     {
         label: "Drinks",
         icon: "drinks",
         items: [
-            { name: "Kingfisher Beer", price: "₹220", desc: "Ice cold" },
-            { name: "Whiskey Sour", price: "₹350", desc: "Premium blend" },
-            { name: "Mango Lassi", price: "₹180", desc: "Fresh & thick" },
-            { name: "Mojito", price: "₹280", desc: "Mint & lime" },
-            { name: "IMFL Spirits", price: "₹200+", desc: "Wide selection" },
+            {
+                name: "Beer",
+                price: "₹220+",
+                desc: "Ice cold premium beer",
+            },
+            {
+                name: "Whiskey",
+                price: "₹250+",
+                desc: "Wide selection of whiskey",
+            },
+            {
+                name: "Vodka",
+                price: "₹200+",
+                desc: "Smooth premium vodka",
+            },
+            {
+                name: "Rum",
+                price: "₹180+",
+                desc: "Classic dark & white rum",
+            },
         ],
     },
 ];

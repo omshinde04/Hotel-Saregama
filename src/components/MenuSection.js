@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+
 import {
     FaDrumstickBite,
-    FaUtensils,
     FaWineGlassAlt,
 } from "react-icons/fa";
 import { GiMeal, GiBowlOfRice } from "react-icons/gi";
@@ -22,11 +23,13 @@ export default function MenuSection() {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
-        <section id="menu" className="pt-10 pb-20 lg:pt-20 lg:pb-section bg-surface/30">
-
+        <section
+            id="menu"
+            className="pt-10 pb-20 lg:pt-20 lg:pb-section bg-surface/30"
+        >
             <div className="max-w-container mx-auto px-6 md:px-10">
 
-                {/* HEADER */}
+                {/* 🔥 HEADER */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +52,7 @@ export default function MenuSection() {
                     </p>
                 </motion.div>
 
-                {/* TABS */}
+                {/* 🔥 TABS */}
                 <div className="flex gap-2 overflow-x-auto pb-2 mb-10 scroll-container">
                     {MENU_CATEGORIES.map((cat, i) => (
                         <button
@@ -61,13 +64,15 @@ export default function MenuSection() {
                                     : "bg-transparent text-muted border border-gold/10 hover:text-cream"
                                 }`}
                         >
-                            <span className="text-sm">{ICON_MAP[cat.icon]}</span>
+                            <span className="text-sm">
+                                {ICON_MAP[cat.icon]}
+                            </span>
                             {cat.label}
                         </button>
                     ))}
                 </div>
 
-                {/* ITEMS */}
+                {/* 🔥 ITEMS */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeTab}
@@ -97,9 +102,11 @@ export default function MenuSection() {
                                 </div>
 
                                 {/* DESC */}
-                                <p className="text-xs text-muted italic leading-relaxed">
-                                    {item.desc}
-                                </p>
+                                {item.desc && (
+                                    <p className="text-xs text-muted italic leading-relaxed">
+                                        {item.desc}
+                                    </p>
+                                )}
 
                                 {/* LINE */}
                                 <div className="mt-4 h-px bg-gold/10 group-hover:bg-gold/30 transition" />
@@ -108,15 +115,14 @@ export default function MenuSection() {
                     </motion.div>
                 </AnimatePresence>
 
-                {/* CTA */}
-                <div className="text-center mt-12">
-                    <a
-                        href="https://wa.me/919403444438?text=Hi%20Saregama!%20Show%20full%20menu"
-                        target="_blank"
-                        className="btn-outline-gold inline-flex items-center gap-3 px-7 py-3 rounded-full text-sm uppercase tracking-widest"
+                {/* 🔥 CTA (FIXED) */}
+                <div className="text-center mt-14">
+                    <Link
+                        href="/menu"
+                        className="btn-outline-gold inline-flex items-center gap-3 px-8 py-3.5 rounded-full text-sm uppercase tracking-widest"
                     >
                         View Full Menu
-                    </a>
+                    </Link>
                 </div>
 
             </div>
