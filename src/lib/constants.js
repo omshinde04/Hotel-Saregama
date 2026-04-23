@@ -24,7 +24,7 @@ export const MARQUEE_ITEMS = [
 export const DISHES = [
     {
         name: "Chicken Lollipop",
-        price: "₹420",
+        price: "₹140 / ₹280", // ✅ from real menu
         desc: "Crispy outside, juicy inside — our most-ordered starter with a secret highway spice blend.",
         image: "/images/dishes/chicken-lollipop-saregama.jpg",
         alt: "Crispy deep-fried chicken lollipop served with spicy sauce",
@@ -32,7 +32,7 @@ export const DISHES = [
     },
     {
         name: "Chicken Biryani",
-        price: "₹550",
+        price: "₹220", // ✅ from real menu
         desc: "Slow-cooked dum biryani using authentic hand-ground spices — a meal that makes the journey worth it.",
         image: "/images/dishes/chicken-biryani-ghoti-nashik.jpg",
         alt: "Fragrant chicken biryani in a traditional clay pot",
@@ -40,14 +40,13 @@ export const DISHES = [
     },
     {
         name: "Butter Chicken",
-        price: "₹520",
+        price: "₹300 / ₹800", // ✅ from real menu
         desc: "Rich, velvety tomato makhani with tender charcoal-smoked chicken — comfort in every bite.",
         image: "/images/dishes/butter-chicken-saregama.jpg",
         alt: "Creamy butter chicken in a copper bowl",
         tag: "Classic",
     },
 ];
-
 //about features
 export const FEATURES = [
     "Spacious AC & Non-AC Dining Areas",
