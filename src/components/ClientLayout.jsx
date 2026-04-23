@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function ClientLayout({ children }) {
     const [loading, setLoading] = useState(true);
@@ -22,6 +23,8 @@ export default function ClientLayout({ children }) {
                     <Navbar />
                     {children}
                     <Footer />
+                    {/* ✅ FLOATING WHATSAPP */}
+                    <WhatsAppFloat />
                 </>
             )}
         </>
