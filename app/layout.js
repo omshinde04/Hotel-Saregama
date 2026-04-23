@@ -1,6 +1,5 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ClientLayout from "@/components/ClientLayout";
 
 export const metadata = {
   metadataBase: new URL("https://hotelsaregama.in"),
@@ -67,7 +66,7 @@ export const metadata = {
     siteName: "Saregama Restaurant",
     images: [
       {
-        url: "https://hotelsaregama.in/logo.png", // ✅ FIXED
+        url: "https://hotelsaregama.in/logo.png",
         width: 1200,
         height: 630,
         alt: "Saregama Restaurant Nashik",
@@ -82,7 +81,7 @@ export const metadata = {
     title: "Saregama Restaurant Nashik",
     description:
       "Best highway restaurant near Ghoti Nashik. Food, drinks & family dining.",
-    images: ["https://hotelsaregama.in/logo.png"], // ✅ FIXED
+    images: ["https://hotelsaregama.in/logo.png"],
   },
 
   category: "restaurant",
@@ -92,33 +91,27 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <ClientLayout>{children}</ClientLayout>
 
-        {/* 🔥 STRUCTURED DATA (GOOGLE BOOST) */}
+        {/* 🔥 STRUCTURED DATA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["Restaurant", "LocalBusiness"],
-
               name: "Saregama Family Restaurant & Bar",
-              image: "https://hotelsaregama.in/logo.png", // ✅ FIXED
+              image: "https://hotelsaregama.in/logo.png",
               "@id": "https://hotelsaregama.in",
               url: "https://hotelsaregama.in",
-
               telephone: "+91-9373545169",
               priceRange: "₹₹",
-
               servesCuisine: [
                 "Indian",
                 "Chinese",
                 "Biryani",
                 "Bar Food",
               ],
-
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Mumbai–Nashik Expressway, Ghoti",
@@ -127,37 +120,25 @@ export default function RootLayout({ children }) {
                 postalCode: "422402",
                 addressCountry: "IN",
               },
-
               geo: {
                 "@type": "GeoCoordinates",
                 latitude: 19.7278837,
                 longitude: 73.6320107,
               },
-
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
                   dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday",
+                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
                   ],
                   opens: "11:00",
                   closes: "01:30",
                 },
               ],
-
               sameAs: [
                 "https://www.instagram.com/hotelsaregama_nsk",
                 "https://www.google.com/maps/place/Saregama+Family+Restaurant+and+Bar",
               ],
-
-              hasMap:
-                "https://www.google.com/maps/place/Saregama+Family+Restaurant+and+Bar",
             }),
           }}
         />
